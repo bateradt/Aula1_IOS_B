@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,40 +14,89 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="AulaFib" customModuleProvider="target">
             <connections>
                 <outlet property="btnTeste" destination="7Ws-KP-z43" id="6k0-6D-Ihe"/>
+                <outlet property="carregando" destination="XWk-1w-rrs" id="KOT-Z9-ijt"/>
+                <outlet property="greenLabel" destination="QJ4-76-h1q" id="qpx-pW-ZWK"/>
+                <outlet property="imgPrincipal" destination="5f7-Dm-xYS" id="ro0-N9-dEg"/>
                 <outlet property="mainTextLabel" destination="xn1-ki-g8k" id="itj-EC-rff"/>
+                <outlet property="redLabel" destination="Er6-FG-H16" id="nDe-Y6-ubh"/>
                 <outlet property="view" destination="lOb-II-jXY" id="gWb-cY-sv5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="lOb-II-jXY">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ws-KP-z43">
-                    <rect key="frame" x="300" y="620" width="22" height="22"/>
-                    <connections>
-                        <action selector="onClick:" destination="-1" eventType="touchDown" id="TE0-UD-CZ2"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estudo de IOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-ki-g8k">
-                    <rect key="frame" x="100" y="40" width="175" height="21"/>
-                    <color key="backgroundColor" red="0.23670463736309488" green="0.91169446243523322" blue="0.48667611933228344" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XWk-1w-rrs">
+                    <rect key="frame" x="142" y="266" width="37" height="37"/>
+                    <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKK-QG-W8q">
+                    <rect key="frame" x="16" y="348" width="61" height="21"/>
+                    <color key="backgroundColor" red="0.94428027849740936" green="0.28356048572894804" blue="0.39613821839923469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Teste com texto grande Teste" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er6-FG-H16">
+                    <rect key="frame" x="16" y="377" width="181" height="61"/>
+                    <color key="backgroundColor" red="0.94428027849999996" green="0.28356048569999998" blue="0.39613821840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ4-76-h1q">
+                    <rect key="frame" x="239" y="348" width="65" height="21"/>
+                    <color key="backgroundColor" red="0.19628800855164763" green="0.94428027849740936" blue="0.18140237931495518" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="DzV-gN-wGx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bfv" translatesAutoresizingMaskIntoConstraints="NO" id="5f7-Dm-xYS">
+                    <rect key="frame" x="16" y="68" width="288" height="177"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="177" id="voc-hp-qoG"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Estudo de IOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-ki-g8k">
+                    <rect key="frame" x="100" y="20" width="120" height="21"/>
+                    <color key="backgroundColor" red="0.88009770717833258" green="0.8791426346568505" blue="0.94428027849740936" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ws-KP-z43">
+                    <rect key="frame" x="282" y="445" width="22" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="onClick:" destination="-1" eventType="touchDown" id="TE0-UD-CZ2"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
-                <constraint firstItem="xn1-ki-g8k" firstAttribute="leading" secondItem="S0M-Bt-0ew" secondAttribute="leading" constant="100" id="09a-j7-aAg"/>
-                <constraint firstItem="7Ws-KP-z43" firstAttribute="leading" secondItem="S0M-Bt-0ew" secondAttribute="leading" constant="300" id="8Dg-QB-ihI"/>
-                <constraint firstItem="xn1-ki-g8k" firstAttribute="top" secondItem="S0M-Bt-0ew" secondAttribute="top" constant="20" id="ApN-5M-bgf"/>
-                <constraint firstItem="7Ws-KP-z43" firstAttribute="top" secondItem="S0M-Bt-0ew" secondAttribute="top" constant="600" id="kVE-Os-iJd"/>
-                <constraint firstItem="S0M-Bt-0ew" firstAttribute="trailing" secondItem="xn1-ki-g8k" secondAttribute="trailing" constant="100" id="ti2-5l-ad8"/>
-                <constraint firstItem="S0M-Bt-0ew" firstAttribute="trailing" secondItem="7Ws-KP-z43" secondAttribute="trailing" constant="53" id="uLs-Yz-ITD"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="top" secondItem="lOb-II-jXY" secondAttribute="top" constant="68" id="3eu-xk-uwW"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="leading" secondItem="cKK-QG-W8q" secondAttribute="leading" id="419-bG-Kpf"/>
+                <constraint firstItem="cKK-QG-W8q" firstAttribute="leading" secondItem="S0M-Bt-0ew" secondAttribute="leading" constant="16" id="6JG-hd-a2S"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="centerX" secondItem="XWk-1w-rrs" secondAttribute="centerX" id="J3k-po-mXb"/>
+                <constraint firstItem="cKK-QG-W8q" firstAttribute="top" secondItem="5f7-Dm-xYS" secondAttribute="bottom" constant="103" id="PKQ-en-qKa"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="leading" secondItem="Er6-FG-H16" secondAttribute="leading" id="UEs-HE-MiW"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="trailing" secondItem="lOb-II-jXY" secondAttribute="trailingMargin" id="V3l-i9-P5y"/>
+                <constraint firstItem="Er6-FG-H16" firstAttribute="top" secondItem="cKK-QG-W8q" secondAttribute="bottom" constant="8" id="Y0A-45-Jhq"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="top" secondItem="xn1-ki-g8k" secondAttribute="bottom" constant="27" id="dyZ-xa-atL"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="centerX" secondItem="xn1-ki-g8k" secondAttribute="centerX" id="f9P-51-5M1"/>
+                <constraint firstItem="QJ4-76-h1q" firstAttribute="baseline" secondItem="cKK-QG-W8q" secondAttribute="baseline" id="iLn-tz-ixM"/>
+                <constraint firstItem="XWk-1w-rrs" firstAttribute="top" secondItem="5f7-Dm-xYS" secondAttribute="bottom" constant="21" id="jIZ-Ax-eWs"/>
+                <constraint firstItem="5f7-Dm-xYS" firstAttribute="trailing" secondItem="QJ4-76-h1q" secondAttribute="trailing" id="knl-hg-TfG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="S0M-Bt-0ew"/>
-            <point key="canvasLocation" x="-455.5" y="-163.5"/>
+            <point key="canvasLocation" x="-445" y="-122"/>
         </view>
     </objects>
+    <resources>
+        <image name="bfv" width="695" height="391"/>
+    </resources>
 </document>
